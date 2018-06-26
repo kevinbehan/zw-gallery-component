@@ -32,10 +32,19 @@ let items = [
 
 let getThumbnailContent = item => <img width={120} height={90} src={item.msrc} alt={item.title}/>
 
+const GalleryHeading = props => {
+  return (
+    <h1>Welcome to my {props.theme} gallery!</h1>  
+  )
+}
+
 class App extends Component {
   render() {
     return (
+      <React.Fragment>
+        <GalleryHeading theme="Cat"/>
         <PhotoSwipeGallery items={items} thumbnailContent={getThumbnailContent} className="myGallery"/>
+      </React.Fragment>
     );
   }
 }
